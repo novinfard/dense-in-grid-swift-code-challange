@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import MarsFramework
+import MarsFramework
 
 class MarsFrameworkTests: XCTestCase {
 
@@ -45,7 +45,7 @@ class MarsFrameworkTests: XCTestCase {
 		XCTAssertEqual(makeSUT()?.matixIndex(at: 8), Mars.MatrixIndex(row: 2, col: 2))
     }
 
-    func test_calculateCellValue() {
+    func test_calculateCellValueByMatrixIndex() {
         let index = 1
 		let matrix = makeSUT()?.matixIndex(at: index)
 
@@ -53,7 +53,7 @@ class MarsFrameworkTests: XCTestCase {
         XCTAssertEqual(value, 14)
     }
 
-    func test_calculateCellValueForEdge() {
+    func test_calculateCellValueByIndex() {
 		XCTAssertEqual(makeSUT()?.calculateCell(index: 0), 10)
 		XCTAssertEqual(makeSUT()?.calculateCell(index: 2), 8)
 		XCTAssertEqual(makeSUT()?.calculateCell(index: 8), 6)

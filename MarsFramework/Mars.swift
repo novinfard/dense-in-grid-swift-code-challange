@@ -8,14 +8,19 @@
 
 import Foundation
 
-struct Mars {
-    var values: [Int]
-    let numbersOfResults: Int
-    let gridSize: Int
+public struct Mars {
+    private(set) public var values: [Int]
+	public let numbersOfResults: Int
+    public let gridSize: Int
     
-    struct MatrixIndex: Equatable {
+    public struct MatrixIndex: Equatable {
         let row: Int
         let col: Int
+
+		public init(row: Int, col: Int) {
+			self.row = row
+			self.col = col
+		}
 
         var wholeBlock: [MatrixIndex] {
             var results = [MatrixIndex]()
@@ -52,7 +57,7 @@ struct Mars {
         self.numbersOfResults = numbersOfResults
     }
     
-    func matixIndex(at index: Int) -> MatrixIndex? {
+    public func matixIndex(at index: Int) -> MatrixIndex? {
         guard index < self.values.count else {
             return nil
         }
@@ -62,7 +67,7 @@ struct Mars {
         return MatrixIndex(row: row, col: col)
     }
 
-    func isValid(matrix: MatrixIndex) -> Bool {
+    public func isValid(matrix: MatrixIndex) -> Bool {
         guard matrix.row >= 0, matrix.row < self.gridSize,
             matrix.col >= 0, matrix.col < self.gridSize else {
                 return false
@@ -70,7 +75,7 @@ struct Mars {
         return true
     }
 
-    func indexFor(matrix: MatrixIndex) -> Int? {
+	public func indexFor(matrix: MatrixIndex) -> Int? {
         let index = matrix.col + (matrix.row * self.gridSize)
         guard index >= 0,
             index < (self.gridSize * self.gridSize) else {
@@ -79,7 +84,7 @@ struct Mars {
         return index
     }
 
-    func valueFor(matrix: MatrixIndex) -> Int {
+    public func valueFor(matrix: MatrixIndex) -> Int {
         guard self.isValid(matrix: matrix) else {
             return 0
         }
@@ -89,16 +94,20 @@ struct Mars {
         return 0
     }
 
-
-
-    func calculateCell(matrixIndex: MatrixIndex?) -> Int {
+    public func calculateCell(matrixIndex: MatrixIndex?) -> Int {
         return matrixIndex?.wholeBlock.reduce(0, { (partial, matrix) -> Int in
             return partial + self.valueFor(matrix: matrix)
         }) ?? 0
     }
     
-    func calculateCell(index: Int) -> Int {
+    public func calculateCell(index: Int) -> Int {
 		let mIndex = self.matixIndex(at: index)
-		self.calculateCell(matrixIndex: mIndex)
+		return self.calculateCell(matrixIndex: mIndex)
+    }
+}
+
+fileprivate extension Collection {
+    subscript (safe index: Index) -> Iterator.Element? {
+        return index >= startIndex && index < endIndex ? self[index] : nil
     }
 }
