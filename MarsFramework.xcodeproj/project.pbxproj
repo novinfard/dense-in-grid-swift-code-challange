@@ -11,8 +11,6 @@
 		64151E6A23E83D85003EC63C /* MarsFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64151E6923E83D85003EC63C /* MarsFrameworkTests.swift */; };
 		64151E6C23E83D85003EC63C /* MarsFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 64151E5E23E83D85003EC63C /* MarsFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64151E7623E83D95003EC63C /* Mars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64151E7523E83D95003EC63C /* Mars.swift */; };
-		64151E9423E848F5003EC63C /* MarsiOSFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 64151E8623E848F5003EC63C /* MarsiOSFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64151E9B23E84903003EC63C /* Mars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64151E7523E83D95003EC63C /* Mars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,11 +31,6 @@
 		64151E6923E83D85003EC63C /* MarsFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsFrameworkTests.swift; sourceTree = "<group>"; };
 		64151E6B23E83D85003EC63C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64151E7523E83D95003EC63C /* Mars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mars.swift; sourceTree = "<group>"; };
-		64151E8423E848F5003EC63C /* MarsiOSFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarsiOSFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		64151E8623E848F5003EC63C /* MarsiOSFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarsiOSFramework.h; sourceTree = "<group>"; };
-		64151E8723E848F5003EC63C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64151E9123E848F5003EC63C /* MarsiOSFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsiOSFrameworkTests.swift; sourceTree = "<group>"; };
-		64151E9323E848F5003EC63C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +49,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64151E8123E848F5003EC63C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -71,8 +57,6 @@
 			children = (
 				64151E5D23E83D85003EC63C /* MarsFramework */,
 				64151E6823E83D85003EC63C /* MarsFrameworkTests */,
-				64151E8523E848F5003EC63C /* MarsiOSFramework */,
-				64151E9023E848F5003EC63C /* MarsiOSFrameworkTests */,
 				64151E5C23E83D85003EC63C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,7 +66,6 @@
 			children = (
 				64151E5B23E83D85003EC63C /* MarsFramework.framework */,
 				64151E6423E83D85003EC63C /* MarsFrameworkTests.xctest */,
-				64151E8423E848F5003EC63C /* MarsiOSFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,24 +89,6 @@
 			path = MarsFrameworkTests;
 			sourceTree = "<group>";
 		};
-		64151E8523E848F5003EC63C /* MarsiOSFramework */ = {
-			isa = PBXGroup;
-			children = (
-				64151E8623E848F5003EC63C /* MarsiOSFramework.h */,
-				64151E8723E848F5003EC63C /* Info.plist */,
-			);
-			path = MarsiOSFramework;
-			sourceTree = "<group>";
-		};
-		64151E9023E848F5003EC63C /* MarsiOSFrameworkTests */ = {
-			isa = PBXGroup;
-			children = (
-				64151E9123E848F5003EC63C /* MarsiOSFrameworkTests.swift */,
-				64151E9323E848F5003EC63C /* Info.plist */,
-			);
-			path = MarsiOSFrameworkTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -132,14 +97,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64151E6C23E83D85003EC63C /* MarsFramework.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64151E7F23E848F5003EC63C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64151E9423E848F5003EC63C /* MarsiOSFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,24 +139,6 @@
 			productReference = 64151E6423E83D85003EC63C /* MarsFrameworkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		64151E8323E848F5003EC63C /* MarsiOSFramework */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 64151E9523E848F5003EC63C /* Build configuration list for PBXNativeTarget "MarsiOSFramework" */;
-			buildPhases = (
-				64151E7F23E848F5003EC63C /* Headers */,
-				64151E8023E848F5003EC63C /* Sources */,
-				64151E8123E848F5003EC63C /* Frameworks */,
-				64151E8223E848F5003EC63C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MarsiOSFramework;
-			productName = MarsiOSFramework;
-			productReference = 64151E8423E848F5003EC63C /* MarsiOSFramework.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,9 +154,6 @@
 						LastSwiftMigration = 1130;
 					};
 					64151E6323E83D85003EC63C = {
-						CreatedOnToolsVersion = 11.3.1;
-					};
-					64151E8323E848F5003EC63C = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -237,7 +173,6 @@
 			targets = (
 				64151E5A23E83D85003EC63C /* MarsFramework */,
 				64151E6323E83D85003EC63C /* MarsFrameworkTests */,
-				64151E8323E848F5003EC63C /* MarsiOSFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -251,13 +186,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		64151E6223E83D85003EC63C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64151E8223E848F5003EC63C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,14 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64151E6A23E83D85003EC63C /* MarsFrameworkTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64151E8023E848F5003EC63C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64151E9B23E84903003EC63C /* Mars.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,57 +426,6 @@
 			};
 			name = Release;
 		};
-		64151E9623E848F5003EC63C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MarsiOSFramework/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pulelive.MarsiOSFramework;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		64151E9723E848F5003EC63C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MarsiOSFramework/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pulelive.MarsiOSFramework;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -583,15 +452,6 @@
 			buildConfigurations = (
 				64151E7323E83D85003EC63C /* Debug */,
 				64151E7423E83D85003EC63C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		64151E9523E848F5003EC63C /* Build configuration list for PBXNativeTarget "MarsiOSFramework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				64151E9623E848F5003EC63C /* Debug */,
-				64151E9723E848F5003EC63C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
