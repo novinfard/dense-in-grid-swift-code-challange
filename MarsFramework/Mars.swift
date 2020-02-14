@@ -22,7 +22,7 @@ public struct Mars {
 			self.col = col
 		}
 
-        var wholeBlock: [MatrixIndex] {
+        public var wholeBlock: [MatrixIndex] {
             var results = [MatrixIndex]()
             for i in -1 ... 1 {
                 for j in -1 ... 1 {
@@ -104,6 +104,12 @@ public struct Mars {
 		let mIndex = self.matixIndex(at: index)
 		return self.calculateCell(matrixIndex: mIndex)
     }
+
+	public func allCellResults() -> [Int] {
+		return Array(0 ..< values.count).map {
+			return self.calculateCell(index: $0)
+		}
+	}
 }
 
 fileprivate extension Collection {
