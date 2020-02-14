@@ -12,6 +12,11 @@ public struct Mars {
     private(set) public var values: [Int]
 	public let numbersOfResults: Int
     public let gridSize: Int
+
+	public struct ResultItem {
+		let index: Int
+		let score: Int
+	}
     
     public struct MatrixIndex: Equatable {
         let row: Int
@@ -108,6 +113,26 @@ public struct Mars {
 	public func allCellResults() -> [Int] {
 		return Array(0 ..< values.count).map {
 			return self.calculateCell(index: $0)
+		}
+	}
+
+	public func sortedResults() -> [ResultItem] {
+		var results = [ResultItem]()
+		for (index, result) in self.allCellResults().enumerated() {
+			results.append(ResultItem(index: index, score: result))
+		}
+		return results.sorted(by: { $0.score > $1.score })
+	}
+
+	public func output() -> [ResultItem] {
+		let results = self.sortedResults()
+		return Array(results.prefix(self.numbersOfResults))
+	}
+
+	public func finalReport() -> [String] {
+		return self.output().compactMap {
+			guard let matrix = matixIndex(at: $0.index) else { return nil }
+			return "(\(matrix.col), \(matrix.row) score: \($0.score))"
 		}
 	}
 }

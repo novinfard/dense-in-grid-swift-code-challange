@@ -59,7 +59,7 @@ class MarsFrameworkTests: XCTestCase {
 		XCTAssertEqual(makeSUT()?.calculateCell(index: 8), 6)
 	}
 
-	func test_calculateAllValues() {
+	func test_calculateAllCellResults() {
 		// Given
 		let sut = makeSUT()
 
@@ -71,6 +71,33 @@ class MarsFrameworkTests: XCTestCase {
 		XCTAssertEqual(allResults?[0], 10)
 		XCTAssertEqual(allResults?[8], 6)
 	}
+
+	func test_finalOutput() {
+		// Given
+		let sut = makeSUT()
+
+		// When
+		let report = sut?.finalReport()
+
+		// Then
+		XCTAssertEqual(report, ["(1, 1 score: 20)"])
+	}
+
+	func test_finalOutput_secondTest() {
+		// Given
+		let sut = makeSUT([3, 4, 2, 3, 2, 1, 4, 4, 2, 0, 3, 4, 1, 1, 2, 3, 4, 4])
+
+		// When
+		let report = sut?.finalReport()
+
+		// Then
+		XCTAssertEqual(report, [
+			"(1, 2 score: 27)",
+			"(1, 1 score: 25)",
+			"(2, 2 score: 23)"
+		])
+	}
+
 }
 
 // MARK: - Helpers
